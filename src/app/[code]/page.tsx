@@ -3,7 +3,6 @@ import {
   getCurrentState,
   TIMELINE_PHASES,
   PRODUCT_LABELS,
-  PRODUCT_TOTAL_DAYS,
   type ProductType,
 } from "@/config/stages";
 import TrackingTimeline from "@/components/TrackingTimeline";
@@ -39,8 +38,6 @@ export default async function TrackingPage({ params }: Props) {
   const productType = order.product_type as ProductType;
   const currentState = getCurrentState(productType, order.created_at);
   const activePhaseIndex = TIMELINE_PHASES.findIndex((p) => p.key === currentState.phase);
-  const totalPhases = TIMELINE_PHASES.length;
-  const progressPct = Math.round((activePhaseIndex / (totalPhases - 1)) * 100);
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -62,45 +59,26 @@ export default async function TrackingPage({ params }: Props) {
 
       <div className="max-w-2xl mx-auto px-4 py-6 space-y-4">
 
-        {/* Card principal — info + barra de progreso */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-          {/* Barra de progreso superior */}
-          <div className="h-1 bg-gray-100">
-            <div
-              className="h-full bg-orange-500 transition-all duration-700"
-              style={{ width: `${progressPct}%` }}
-            />
+        {/* Card principal */}
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+          <div className="flex items-start justify-between mb-5">
+            <div>
+              <p className="text-xs text-gray-400 uppercase tracking-widest font-medium mb-0.5">Cliente</p>
+              <p className="text-xl font-black text-gray-900">{order.customer_name}</p>
+            </div>
+            <div className="text-right">
+              <p className="text-xs text-gray-400 uppercase tracking-widest font-medium mb-0.5">N° de seguimiento</p>
+              <p className="text-sm font-mono font-bold text-orange-500 bg-orange-50 px-2.5 py-1 rounded-lg">
+                {order.tracking_code}
+              </p>
+            </div>
           </div>
-
-          <div className="p-6">
-            {/* Cliente / Código */}
-            <div className="flex items-start justify-between mb-5">
-              <div>
-                <p className="text-xs text-gray-400 uppercase tracking-widest font-medium mb-0.5">Cliente</p>
-                <p className="text-xl font-black text-gray-900">{order.customer_name}</p>
-              </div>
-              <div className="text-right">
-                <p className="text-xs text-gray-400 uppercase tracking-widest font-medium mb-0.5">N° de seguimiento</p>
-                <p className="text-sm font-mono font-bold text-orange-500 bg-orange-50 px-2.5 py-1 rounded-lg">
-                  {order.tracking_code}
-                </p>
-              </div>
-            </div>
-
-            {/* Separador */}
-            <div className="border-t border-gray-50 pt-4 flex items-center justify-between">
-              <div>
-                <p className="text-xs text-gray-400 uppercase tracking-widest font-medium mb-0.5">Producto</p>
-                <p className="text-gray-800 font-semibold text-sm">
-                  {PRODUCT_LABELS[productType]}
-                  <span className="text-gray-400 font-normal"> · {order.model}</span>
-                </p>
-              </div>
-              <div className="text-right">
-                <p className="text-xs text-gray-400 uppercase tracking-widest font-medium mb-0.5">Progreso</p>
-                <p className="text-gray-700 font-bold text-sm">{progressPct}%</p>
-              </div>
-            </div>
+          <div className="border-t border-gray-50 pt-4">
+            <p className="text-xs text-gray-400 uppercase tracking-widest font-medium mb-0.5">Producto</p>
+            <p className="text-gray-800 font-semibold text-sm">
+              {PRODUCT_LABELS[productType]}
+              <span className="text-gray-400 font-normal"> · {order.model}</span>
+            </p>
           </div>
         </div>
 
