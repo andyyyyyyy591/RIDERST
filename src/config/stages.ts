@@ -22,7 +22,7 @@ export const TIMELINE_PHASES: { id: number; key: PhaseKey; label: string }[] = [
   { id: 4, key: "tramites_exportacion", label: "En trámites de exportación" },
   { id: 5, key: "transito_maritimo",    label: "En tránsito marítimo" },
   { id: 6, key: "llego_a_cuba_aduana",  label: "Llegó a Cuba — en aduana" },
-  { id: 7, key: "programando_entrega",  label: "Coordinando entrega" },
+  { id: 7, key: "programando_entrega",  label: "Programando entrega" },
   { id: 8, key: "entregado",            label: "Entregado" },
 ];
 
@@ -73,7 +73,8 @@ export const INTERNAL_STATES: Record<ProductType, InternalState[]> = {
     { day: 91, phase: "llego_a_cuba_aduana",  titulo: "Gestión documental del vehículo", texto: "Se completan los trámites administrativos necesarios antes de la entrega." },
     { day: 95, phase: "llego_a_cuba_aduana",  titulo: "En proceso aduanal",              texto: "La carga permanece en revisión hasta recibir la autorización de salida." },
     { day: 98, phase: "llego_a_cuba_aduana",  titulo: "Liberado por Aduana Cubana",      texto: "La importación fue aprobada." },
-    { day: 99, phase: "programando_entrega",  titulo: "Coordinando entrega",             texto: "Se coordina la entrega con el destinatario." },
+    { day: 99,  phase: "programando_entrega",  titulo: "Programando entrega",             texto: "Se coordina la entrega con el destinatario." },
+    { day: 100, phase: "entregado",            titulo: "Entregado",                       texto: "La motocicleta fue entregada exitosamente." },
   ],
 
   solar_kit: [
@@ -97,7 +98,8 @@ export const INTERNAL_STATES: Record<ProductType, InternalState[]> = {
     { day: 110, phase: "llego_a_cuba_aduana",  titulo: "Inspección de la carga",          texto: "Se inspeccionan los componentes del kit solar." },
     { day: 122, phase: "llego_a_cuba_aduana",  titulo: "En proceso aduanal",              texto: "La carga permanece en revisión hasta su liberación." },
     { day: 136, phase: "llego_a_cuba_aduana",  titulo: "Liberado por Aduana Cubana",      texto: "La importación fue aprobada." },
-    { day: 139, phase: "programando_entrega",  titulo: "Coordinando entrega",             texto: "Se coordina la entrega con el destinatario." },
+    { day: 139, phase: "programando_entrega",  titulo: "Programando entrega",             texto: "Se coordina la entrega con el destinatario." },
+    { day: 140, phase: "entregado",            titulo: "Entregado",                       texto: "El kit solar fue entregado exitosamente." },
   ],
 
   electric_tricycle: [
@@ -122,7 +124,8 @@ export const INTERNAL_STATES: Record<ProductType, InternalState[]> = {
     { day: 126, phase: "llego_a_cuba_aduana",  titulo: "Gestión documental del vehículo", texto: "Se completan los trámites administrativos necesarios antes de la entrega." },
     { day: 140, phase: "llego_a_cuba_aduana",  titulo: "En proceso aduanal",              texto: "La carga permanece en espera de la autorización final." },
     { day: 146, phase: "llego_a_cuba_aduana",  titulo: "Liberado por Aduana Cubana",      texto: "La importación fue aprobada." },
-    { day: 149, phase: "programando_entrega",  titulo: "Coordinando entrega",             texto: "Se coordina la entrega con el destinatario." },
+    { day: 149, phase: "programando_entrega",  titulo: "Programando entrega",             texto: "Se coordina la entrega con el destinatario." },
+    { day: 150, phase: "entregado",            titulo: "Entregado",                       texto: "El triciclo fue entregado exitosamente." },
   ],
 };
 
