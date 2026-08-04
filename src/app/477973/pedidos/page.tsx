@@ -29,14 +29,14 @@ export default async function AdminOrdersPage() {
           <div className="text-right">
             <p className="text-xs text-gray-400">En tránsito</p>
             <p className="text-lg font-black text-blue-700">
-              {enriched.filter((o) => o.phaseLabel !== "Entregado" && o.phaseLabel !== "Programando entrega").length}
+              {enriched.filter((o) => o.phaseLabel !== "Coordinando entrega").length}
             </p>
           </div>
           <div className="w-px h-8 bg-gray-200" />
           <div className="text-right">
-            <p className="text-xs text-gray-400">Entregados</p>
+            <p className="text-xs text-gray-400">Coordinando entrega</p>
             <p className="text-lg font-black text-green-600">
-              {enriched.filter((o) => o.phaseLabel === "Entregado").length}
+              {enriched.filter((o) => o.phaseLabel === "Coordinando entrega").length}
             </p>
           </div>
         </div>
