@@ -23,7 +23,7 @@ export default async function AdminPage() {
       <header className="bg-white border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <span className="text-2xl font-black text-gray-900 tracking-tight">
-            tracking<span className="text-sky-500">rt</span>
+            tracking<span className="text-blue-500">rt</span>
             <span className="text-gray-400 font-normal text-base ml-2">— Panel Admin</span>
           </span>
           <a href="/" className="text-sm text-gray-500 hover:text-gray-800 transition-colors">
@@ -41,7 +41,7 @@ export default async function AdminPage() {
           </div>
           <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
             <p className="text-xs text-gray-400 uppercase tracking-widest font-medium mb-1">En tránsito</p>
-            <p className="text-3xl font-black text-sky-500">
+            <p className="text-3xl font-black text-blue-500">
               {enriched.filter((o) => o.phaseLabel !== "Entregado" && o.phaseLabel !== "Coordinando entrega").length}
             </p>
           </div>

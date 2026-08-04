@@ -18,15 +18,14 @@ export default function TrackingTimeline({ phases, activePhaseIndex }: Props) {
 
         return (
           <li key={phase.key} className="flex gap-3">
-            {/* Indicador + línea */}
             <div className="flex flex-col items-center flex-shrink-0">
               <div className="relative flex items-center justify-center">
                 {isCurrent && (
-                  <span className="absolute animate-ping inline-flex h-8 w-8 rounded-full bg-sky-400 opacity-20" />
+                  <span className="absolute animate-ping inline-flex h-8 w-8 rounded-full bg-blue-700 opacity-20" />
                 )}
                 <div className={`w-7 h-7 rounded-full flex items-center justify-center z-10 border-2 transition-all
-                  ${isDone    ? "bg-sky-500 border-sky-500" : ""}
-                  ${isCurrent ? "bg-sky-500 border-sky-500 shadow-sm shadow-sky-200" : ""}
+                  ${isDone    ? "bg-blue-700 border-blue-700" : ""}
+                  ${isCurrent ? "bg-blue-800 border-blue-800 shadow-sm" : ""}
                   ${isPending ? "bg-white border-gray-200" : ""}
                 `}>
                   {isDone && (
@@ -40,13 +39,12 @@ export default function TrackingTimeline({ phases, activePhaseIndex }: Props) {
               </div>
               {!isLast && (
                 <div
-                  className={`w-px flex-1 my-1 ${isDone ? "bg-sky-300" : "bg-gray-100"}`}
+                  className={`w-px flex-1 my-1 ${isDone ? "bg-blue-200" : "bg-gray-100"}`}
                   style={{ minHeight: "18px" }}
                 />
               )}
             </div>
 
-            {/* Texto */}
             <div className={`pb-4 pt-1 flex-1 ${isLast ? "pb-0" : ""}`}>
               <div className="flex items-center gap-2">
                 <p className={`text-sm font-semibold
@@ -57,8 +55,8 @@ export default function TrackingTimeline({ phases, activePhaseIndex }: Props) {
                   {phase.label}
                 </p>
                 {isCurrent && (
-                  <span className="inline-flex items-center gap-1 bg-sky-50 text-sky-500 text-xs font-semibold px-2 py-0.5 rounded-full border border-sky-100">
-                    <span className="w-1.5 h-1.5 rounded-full bg-sky-500 animate-pulse" />
+                  <span className="inline-flex items-center gap-1 bg-blue-50 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full border border-blue-100">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
                     En curso
                   </span>
                 )}

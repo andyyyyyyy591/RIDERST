@@ -62,7 +62,7 @@ export default function NewOrderForm() {
     router.refresh();
   }
 
-  const inputClass = "w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-transparent";
+  const inputClass = "w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent";
   const labelClass = "block text-xs text-gray-500 mb-1.5 uppercase tracking-widest font-medium";
 
   return (
@@ -96,7 +96,7 @@ export default function NewOrderForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-sky-500 hover:bg-sky-600 disabled:bg-sky-300 text-white font-bold py-2.5 rounded-lg transition-colors text-sm"
+            className="w-full bg-blue-500 hover:bg-blue-600 disabled:bg-blue-300 text-white font-bold py-2.5 rounded-lg transition-colors text-sm"
           >
             {loading ? "Guardando..." : "Crear pedido"}
           </button>

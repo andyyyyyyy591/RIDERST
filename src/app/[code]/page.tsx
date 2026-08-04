@@ -27,7 +27,7 @@ export default async function TrackingPage({ params }: Props) {
           <p className="text-gray-200 text-7xl font-black mb-3">404</p>
           <h1 className="text-lg font-bold text-gray-800 mb-2">Código no encontrado</h1>
           <p className="text-gray-400 text-sm mb-5">Verificá el código e intentá nuevamente.</p>
-          <a href="/" className="text-sky-500 font-semibold text-sm hover:text-sky-600">
+          <a href="/" className="text-blue-700 font-semibold text-sm hover:text-blue-800">
             ← Volver al buscador
           </a>
         </div>
@@ -44,7 +44,7 @@ export default async function TrackingPage({ params }: Props) {
       <header className="bg-white border-b border-gray-100">
         <div className="max-w-xl mx-auto px-5 py-4 flex items-center justify-between">
           <a href="/" className="text-lg font-black text-gray-900">
-            tracking<span className="text-sky-500">rt</span>
+            tracking<span className="text-blue-700">rt</span>
           </a>
           <span className="text-xs text-gray-400 hidden sm:block">
             Seguimiento internacional de envíos
@@ -63,7 +63,7 @@ export default async function TrackingPage({ params }: Props) {
             </div>
             <div className="text-right">
               <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">N° seguimiento</p>
-              <p className="text-xs font-mono font-bold text-sky-500 bg-sky-50 px-2 py-1 rounded-lg">
+              <p className="text-xs font-mono font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded-lg">
                 {order.tracking_code}
               </p>
             </div>
@@ -78,14 +78,14 @@ export default async function TrackingPage({ params }: Props) {
         </div>
 
         {/* Estado actual */}
-        <div className="bg-sky-500 rounded-2xl p-5 text-white">
-          <p className="text-sky-200 text-xs font-semibold uppercase tracking-wider mb-1">
+        <div className="bg-blue-800 rounded-2xl p-5 text-white">
+          <p className="text-blue-300 text-xs font-semibold uppercase tracking-wider mb-1">
             Estado actual
           </p>
           <p className="text-white font-black text-lg leading-tight mb-1">
             {currentState.titulo}
           </p>
-          <p className="text-sky-100 text-sm leading-relaxed">
+          <p className="text-blue-200 text-sm leading-relaxed">
             {currentState.texto}
           </p>
         </div>
@@ -101,7 +101,7 @@ export default async function TrackingPage({ params }: Props) {
         <div className="border-t border-gray-100 pt-5 pb-2">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-400">
             <span className="font-black text-gray-900 text-sm">
-              tracking<span className="text-sky-500">rt</span>
+              tracking<span className="text-blue-700">rt</span>
             </span>
             <span>© {new Date().getFullYear()} TrackingRT. Todos los derechos reservados.</span>
             <div className="flex gap-4">
