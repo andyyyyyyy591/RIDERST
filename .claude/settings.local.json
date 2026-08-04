@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where python3:*)",
+      "Bash(where py:*)",
+      "Bash(where node:*)",
+      "Bash(python3 -c \"import pdfplumber; pdf = pdfplumber.open\\(r''''C:\\\\Users\\\\andre\\\\Downloads\\\\RiderTrack-Especificacion-Funcional.pdf''''\\); [print\\(p.extract_text\\(\\)\\) for p in pdf.pages]\")",
+      "Bash(node -e \"const fs=require\\(''''fs''''\\); const buf=fs.readFileSync\\(''''C:/Users/andre/Downloads/RiderTrack-Especificacion-Funcional.pdf''''\\); const text=buf.toString\\(''''latin1''''\\); const matches=text.match\\(/BT[\\\\s\\\\S]*?ET/g\\); if\\(matches\\) matches.slice\\(0,50\\).forEach\\(m=>console.log\\(m\\)\\);\")",
+      "Bash(node -e \":*)",
+      "Bash(node -e \"require\\(''''pdf-parse''''\\)\")",
+      "Bash(node -e \"require\\(''''pdfjs-dist''''\\)\")",
+      "Bash(powershell -Command \"Add-Type -AssemblyName System.IO.Compression; \\\\$file = [System.IO.File]::ReadAllBytes\\('C:\\\\\\\\Users\\\\\\\\andre\\\\\\\\Downloads\\\\\\\\RiderTrack-Especificacion-Funcional.pdf'\\); Write-Output \\('File size: ' + \\\\$file.Length\\)\")",
+      "Bash(powershell -File - <<'EOF'\n$bytes = [System.IO.File]::ReadAllBytes\\(\"C:\\\\Users\\\\andre\\\\Downloads\\\\RiderTrack-Especificacion-Funcional.pdf\"\\)\nWrite-Output \"File size: $\\($bytes.Length\\)\"\nEOF)",
+      "Bash(cd /tmp)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(node -e \"const m = require\\(''pdf-parse''\\); console.log\\(Object.keys\\(m\\)\\); console.log\\(typeof m\\);\")",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --yes)"
+    ]
+  }
+}
