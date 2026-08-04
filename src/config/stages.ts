@@ -8,21 +8,61 @@ export type ProductType = "motorcycle" | "solar_kit" | "electric_tricycle";
 // ----- ETAPAS PÚBLICAS (lo que ve el cliente) ---------------
 // Modificar textos acá para cambiar lo que aparece en el tracking
 export const PUBLIC_STAGES = [
-  { id: 1, label: "Pedido confirmado" },
-  { id: 2, label: "Pago verificado" },
-  { id: 3, label: "Preparando tu envío" },
-  { id: 4, label: "En trámites de exportación (Miami)" },
-  { id: 5, label: "En tránsito marítimo" },
-  { id: 6, label: "Llegó a Cuba — en trámites de aduana" },
-  { id: 7, label: "Programando entrega" },
-  { id: 8, label: "Entregado" },
+  {
+    id: 1,
+    label: "Pedido confirmado",
+    description: "Tu pedido fue registrado en nuestro sistema y se generó tu número de seguimiento único.",
+    icon: "📋",
+  },
+  {
+    id: 2,
+    label: "Pago verificado",
+    description: "El pago fue recibido y aprobado. Tu envío está autorizado para comenzar el proceso.",
+    icon: "✅",
+  },
+  {
+    id: 3,
+    label: "Preparando tu envío",
+    description: "Tu producto está siendo inspeccionado, preparado y embalado para el transporte internacional.",
+    icon: "📦",
+  },
+  {
+    id: 4,
+    label: "En trámites de exportación",
+    description: "La mercancía ingresó al puerto de Miami y está completando los trámites aduaneros de exportación hacia Cuba.",
+    icon: "🏛️",
+  },
+  {
+    id: 5,
+    label: "En tránsito marítimo",
+    description: "Tu envío está navegando hacia Cuba a bordo de un buque de carga internacional.",
+    icon: "🚢",
+  },
+  {
+    id: 6,
+    label: "Llegó a Cuba — en aduana",
+    description: "La mercancía arribó al puerto cubano y está siendo procesada por la Aduana de Cuba.",
+    icon: "🇨🇺",
+  },
+  {
+    id: 7,
+    label: "Programando entrega",
+    description: "Tu pedido fue liberado por aduana. Estamos coordinando la entrega con el destinatario.",
+    icon: "📍",
+  },
+  {
+    id: 8,
+    label: "Entregado",
+    description: "¡Tu pedido fue entregado exitosamente! Gracias por tu confianza.",
+    icon: "🎉",
+  },
 ] as const;
 
 // ----- NOMBRES MOSTRADOS AL USUARIO -------------------------
 export const PRODUCT_LABELS: Record<ProductType, string> = {
   motorcycle: "Motocicleta",
   solar_kit: "Kit Solar",
-  electric_tricycle: "Triciclo Eléctrico",
+  electric_tricycle: "Triciclo",
 };
 
 // ----- DURACIÓN TOTAL POR PRODUCTO (días) -------------------

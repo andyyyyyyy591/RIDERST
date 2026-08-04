@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RiderTrack — Seguimiento de envíos",
+  title: "trackingrt — Seguimiento de envíos",
   description: "Rastreá tu pedido en tiempo real",
 };
 

@@ -28,7 +28,7 @@ export default async function AdminPage() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold">
-              Rider<span className="text-orange-400">Track</span>{" "}
+              tracking<span className="text-orange-400">rt</span>{" "}
               <span className="text-slate-400 font-normal">— Panel Admin</span>
             </h1>
             <p className="text-slate-500 text-sm mt-1">
