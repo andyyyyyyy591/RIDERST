@@ -47,13 +47,9 @@ export default async function TrackingPage({ params }: Props) {
           <a href="/" className="text-xl font-black text-gray-900 tracking-tight">
             tracking<span className="text-orange-500">rt</span>
           </a>
-          <div className="flex items-center gap-1.5">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500" />
-            </span>
-            <span className="text-xs font-semibold text-orange-500 uppercase tracking-widest">En vivo</span>
-          </div>
+          <span className="text-xs text-gray-400 hidden sm:block">
+            Servicio internacional de seguimiento
+          </span>
         </div>
       </header>
 
@@ -103,9 +99,22 @@ export default async function TrackingPage({ params }: Props) {
           <TrackingTimeline phases={TIMELINE_PHASES} activePhaseIndex={activePhaseIndex} />
         </div>
 
-        <p className="text-center text-gray-300 text-xs pb-4">
-          trackingrt.com
-        </p>
+        {/* Footer */}
+        <div className="border-t border-gray-100 pt-6 pb-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
+            <span className="text-sm font-black text-gray-900 tracking-tight">
+              tracking<span className="text-orange-500">rt</span>
+            </span>
+            <p className="text-xs text-gray-400 text-center">
+              © {new Date().getFullYear()} TrackingRT. Todos los derechos reservados.
+            </p>
+            <div className="flex gap-4 text-xs text-gray-400">
+              <span>Privacidad</span>
+              <span>Términos</span>
+              <span>Soporte</span>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );
