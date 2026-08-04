@@ -55,9 +55,6 @@ export default function HomePage() {
             </button>
           </form>
 
-          <p className="text-center text-gray-400 text-xs mt-6">
-            El número de seguimiento fue enviado al momento de confirmar tu compra.
-          </p>
         </div>
       </div>
 
