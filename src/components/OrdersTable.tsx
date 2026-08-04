@@ -20,7 +20,7 @@ interface Props {
   orders: EnrichedOrder[];
 }
 
-const selectClass = "bg-white border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-400";
+const selectClass = "bg-white border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-400";
 
 export default function OrdersTable({ orders }: Props) {
   const [search, setSearch] = useState("");
@@ -50,7 +50,7 @@ export default function OrdersTable({ orders }: Props) {
           placeholder="Buscar cliente o código..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="bg-white border border-gray-200 rounded-lg px-3 py-2 text-gray-700 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400 col-span-2 sm:col-span-1"
+          className="bg-white border border-gray-200 rounded-lg px-3 py-2 text-gray-700 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-400 col-span-2 sm:col-span-1"
         />
         <select value={filterProduct} onChange={(e) => setFilterProduct(e.target.value)} className={selectClass}>
           <option value="">Todos los productos</option>
@@ -90,7 +90,7 @@ export default function OrdersTable({ orders }: Props) {
               {filtered.map((order, i) => (
                 <tr
                   key={order.id}
-                  className={`border-b border-gray-50 hover:bg-orange-50/50 transition-colors ${i % 2 === 0 ? "" : "bg-gray-50/50"}`}
+                  className={`border-b border-gray-50 hover:bg-sky-50/50 transition-colors ${i % 2 === 0 ? "" : "bg-gray-50/50"}`}
                 >
                   <td className="px-4 py-3 text-gray-500 whitespace-nowrap">
                     {new Date(order.created_at + "T00:00:00").toLocaleDateString("es-ES", {
@@ -104,14 +104,14 @@ export default function OrdersTable({ orders }: Props) {
                   </td>
                   <td className="px-4 py-3 text-gray-500 hidden md:table-cell">{order.seller}</td>
                   <td className="px-4 py-3">
-                    <span className="block text-xs font-semibold text-orange-500">{order.phaseLabel}</span>
+                    <span className="block text-xs font-semibold text-sky-500">{order.phaseLabel}</span>
                     <span className="block text-xs text-gray-400 mt-0.5">{order.stateTitulo}</span>
                   </td>
                   <td className="px-4 py-3">
                     <a
                       href={`/${order.tracking_code}`}
                       target="_blank"
-                      className="text-orange-500 font-mono text-xs hover:underline"
+                      className="text-sky-500 font-mono text-xs hover:underline"
                     >
                       {order.tracking_code}
                     </a>
