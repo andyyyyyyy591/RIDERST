@@ -15,6 +15,7 @@ const PRODUCT_OPTIONS: { value: ProductType; label: string }[] = [
 export default function NewOrderForm() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [copied, setCopied] = useState(false);
   const [success, setSuccess] = useState<{ code: string; link: string } | null>(null);
   const [form, setForm] = useState({
     created_at: new Date().toISOString().split("T")[0],
@@ -62,7 +63,14 @@ export default function NewOrderForm() {
     router.refresh();
   }
 
-  const inputClass = "w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent";
+  async function handleCopy(link: string) {
+    await navigator.clipboard.writeText(link);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
+
+  // text-base (16px) en inputs para evitar zoom en iOS
+  const inputClass = "w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 text-gray-900 text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent";
   const labelClass = "block text-xs text-gray-500 mb-1.5 uppercase tracking-widest font-medium";
 
   return (
@@ -96,7 +104,7 @@ export default function NewOrderForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-500 hover:bg-blue-600 disabled:bg-blue-300 text-white font-bold py-2.5 rounded-lg transition-colors text-sm"
+            className="w-full bg-blue-700 hover:bg-blue-800 disabled:bg-blue-300 text-white font-bold py-2.5 rounded-lg transition-colors text-sm"
           >
             {loading ? "Guardando..." : "Crear pedido"}
           </button>
@@ -104,19 +112,38 @@ export default function NewOrderForm() {
       </form>
 
       {success && (
-        <div className="bg-green-50 border border-green-200 rounded-xl p-4 space-y-2">
-          <p className="text-green-700 font-semibold text-sm">Pedido creado exitosamente</p>
-          <p className="text-gray-900 font-mono text-lg font-bold">{success.code}</p>
+        <div className="bg-green-50 border border-green-200 rounded-xl p-4 space-y-3">
           <div className="flex items-center gap-2">
-            <input readOnly value={success.link} className="flex-1 bg-white border border-gray-200 rounded-lg px-3 py-2 text-gray-600 text-sm font-mono" />
+            <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+              <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <p className="text-green-700 font-semibold text-sm">Pedido creado exitosamente</p>
+          </div>
+
+          <div className="bg-white rounded-lg px-3 py-2 border border-green-100">
+            <p className="text-xs text-gray-400 mb-0.5">Código de seguimiento</p>
+            <p className="text-gray-900 font-mono font-bold text-base">{success.code}</p>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <input
+              readOnly
+              value={success.link}
+              className="flex-1 bg-white border border-gray-200 rounded-lg px-3 py-2 text-gray-500 text-sm font-mono min-w-0"
+            />
             <button
-              onClick={() => navigator.clipboard.writeText(success.link)}
-              className="bg-gray-900 hover:bg-gray-700 text-white text-sm px-3 py-2 rounded-lg transition-colors font-medium"
+              onClick={() => handleCopy(success.link)}
+              className={`flex-shrink-0 font-semibold text-sm px-4 py-2 rounded-lg transition-all ${
+                copied
+                  ? "bg-green-500 text-white"
+                  : "bg-gray-900 hover:bg-gray-700 text-white"
+              }`}
             >
-              Copiar
+              {copied ? "¡Copiado!" : "Copiar"}
             </button>
           </div>
-          <p className="text-gray-500 text-xs">Enviá este link al cliente para que consulte su pedido.</p>
         </div>
       )}
     </div>
