@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "trackingrt — Seguimiento de envíos",
     description: "Rastreá tu pedido en tiempo real",
-    images: [{ url: "/og-image.png" }],
+    images: [{ url: "/og-image.png", width: 400, height: 400 }],
   },
 };
 
