@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "trackingrt — Seguimiento de envíos",
   description: "Rastreá tu pedido en tiempo real",
+  openGraph: {
+    title: "trackingrt — Seguimiento de envíos",
+    description: "Rastreá tu pedido en tiempo real",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
