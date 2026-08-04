@@ -99,17 +99,14 @@ export default async function TrackingPage({ params }: Props) {
             ? "bg-green-50 border-green-200"
             : "bg-orange-50 border-orange-200"
         }`}>
-          <div className="flex items-center gap-3">
-            <span className="text-3xl">{currentStage.icon}</span>
-            <div>
-              <p className={`text-xs font-semibold uppercase tracking-widest mb-0.5 ${
-                isDelivered ? "text-green-600" : "text-orange-600"
-              }`}>
-                Estado actual · Día {daysElapsed}
-              </p>
-              <p className="text-gray-900 font-bold text-lg leading-tight">{currentStage.label}</p>
-              <p className="text-gray-600 text-sm mt-1">{currentStage.description}</p>
-            </div>
+          <div>
+            <p className={`text-xs font-semibold uppercase tracking-widest mb-1 ${
+              isDelivered ? "text-green-600" : "text-orange-600"
+            }`}>
+              Estado actual
+            </p>
+            <p className="text-gray-900 font-bold text-lg leading-tight">{currentStage.label}</p>
+            <p className="text-gray-600 text-sm mt-1">{currentStage.description}</p>
           </div>
         </div>
 
