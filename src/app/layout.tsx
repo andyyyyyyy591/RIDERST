@@ -13,12 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://trackingrt.online"),
   title: "trackingrt — Seguimiento de envíos",
   description: "Rastreá tu pedido en tiempo real",
   openGraph: {
     title: "trackingrt — Seguimiento de envíos",
     description: "Rastreá tu pedido en tiempo real",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/og-image.png" }],
   },
 };
 
